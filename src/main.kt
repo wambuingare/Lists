@@ -1,46 +1,60 @@
 fun main() {
-println(peopleHeight.count()
-    println(peopleHeight.sumOf { ("1.65,1.5,1.63,1.7,1.68") }
 
-  (name(listOf("computer","mary","monitor","Tanya","Keyboard","Jane","Laptop","Lisa","Mouse","Lona"))
+  name(listOf("computer","mary","monitor","Tanya","Keyboard","Jane","Laptop","Lisa","Mouse","Lona"))
+    var y=heights(listOf(2.0,67.4,7.5,67.3,23.0))
+    println(y)
+    var b=Human("mary",18,126.8,42.5)
+    var c=Human("Becky",17,134.2,48.3)
+    var d=Human("Lyne",20,131.2,50.1)
+    var list= listOf(b,c,d)
+    var w=list.sortedBy {Human->Human.age }
+    println(w)
+    var e=Human("Wanda",21,155.6,54.3)
+    var f=Human("Laura",22,145.8,54.9)
+    var lists= listOf(e,f)
+    var z=list.sortedBy { Human->Human.age }
+    println(z)
+ var x=Cars("12290",60)
+    var v=Cars("Honda",109)
+    var listss= listOf(x,v)
+var t=listss.sortedBy { Cars->Cars.mileage }
+    println(t)
 
 }
     fun name(names:List<String>):List<String>{
     names.forEachIndexed { names, z ->
- if (names%2==0) {
-     println(z)
- }
-    return z
+        if (names % 2 == 0) {
+            println(z)
+        }
     }
+    return names
+
 
 }
-fun h(height:List<double>): String{
+fun heights(height:List<Double>): String{
     var heightTotal=height.sum()
-    var avgheight=height.avg()
+    var avgheight=height.average()
+    var ppl=("$heightTotal $avgheight")
+    return ppl
 
 }
-    data class Human(var name: String, var age: Int, var height: Int, var weight: Int){
-        var Human =
-            listOf(
-                Human("Jane", 15, 120, 35),
-                Human("Stella", 18, 147, 40),
-                Human("Mercy", 17, 150, 53),
-                Human("Mary", 25, 162, 52)
-            )
-        var sortedHuman = Human.sortedBy { human -> human.name }
-        var descendingSortedHuman = Human.sortedByDescending { human -> human.age }
+    data class Human(var name: String, var age: Int, var height: Double, var weight: Double) {
     }
+fun add (name:List<Any>):List<Any>{
+    return listOf()
+}
 
+data class Cars(var registration: String, var mileage: Int)
+fun motorVehicle(car:List<Cars>):Int {
+    var motorVehicle = 0
+    car.forEach { cars ->
+        cars.mileage
+    }
+    var total = motorVehicle / car.count()
+    return total
 }
 
 
-
-data class Car(var registration: Int, var mileage: Int)
-var Vehicle= listOf(
-    Car(13231,12000),
-    Car(12785,15000),
-    Car(15987,16000)
-)
 
 
 
